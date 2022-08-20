@@ -1,0 +1,1296 @@
+import ssl
+from flask import Flask,render_template,request
+from pymongo import MongoClient
+import datetime
+import requests
+import random
+import math
+
+
+app = Flask(__name__,template_folder='Utility')
+jinja2_environment = {
+    'comment_start_string': '{##',
+}
+try:
+    client = MongoClient("*****",ssl_cert_reqs=ssl.CERT_NONE)
+    db = client["****"]
+    collection_Name = db["****"]
+    print('Connection with Database - checked')
+except Exception as ex:
+    print(ex)
+
+
+@app.route('/',methods=["GET"])
+def serverping():
+    if request.method == "GET":
+        try:
+            return render_template("***")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data),200
+    else:
+        data = {"message": "POST method is not Allowed.."}
+        return render_template("error.html",data=data),404
+
+
+@app.route('/error',methods=["GET","POST"])
+def errorping():
+    try:
+        data = {"message": "Page not Found!"}
+        return render_template("error.html",data=data),404
+    except Exception as exceptionMessage:
+        data = {"message": f"Invalid method.. {exceptionMessage}"}
+        return render_template("error.html",data=data),404
+
+
+@app.route('***/partnerwithus',methods=["GET"])
+def partnerwithus():
+    if request.method == "GET":
+        try:
+            return render_template("***")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('***/cryptosweoffer',methods=["GET"])
+def cryptooffer():
+    if request.method == "GET":
+        try:
+            return render_template("***")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('***/howthisworks',methods=["GET"])
+def howwork():
+    if request.method == "GET":
+        try:
+            return render_template("***")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('***/aboutus',methods=["GET"])
+def aboutusdef():
+    if request.method == "GET":
+        try:
+            return render_template("***")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('***/contactus',methods=["GET"])
+def contactme():
+    if request.method == "GET":
+        try:
+            return render_template("***/")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('***/paymesafe',methods=["GET"])
+def paymesafe():
+    if request.method == "GET":
+        try:
+            formulatedGetCurrencies = {"api_key": '***/'}
+            urlformulatedGetCurrencies = "https://faucetpay***/"
+            postedformulatedGetCurrencies = requests.post(urlformulatedGetCurrencies,data=formulatedGetCurrencies)
+            resp = postedformulatedGetCurrencies.json()
+            if resp['status'] == 200:
+                data = {"table": resp['***/']}
+                return render_template("***/",data=data)
+            else:
+                data = {
+                    "message": f"Please contact our team and Kindly inform the issue. code {resp['status']} . Thanks"}
+                return render_template("error.html",data=data)
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('/***/paymesafeexpress',methods=["GET"])
+def paymeexpresssafe():
+    if request.method == "GET":
+        try:
+            formulatedGetCurrencies = {"api_key": '***/','user_token':'***/'}
+            urlformulatedGetCurrencies = "https://***//***/-***//v2/getAvailableCurrencies"
+            postedformulatedGetCurrencies = requests.post(urlformulatedGetCurrencies,data=formulatedGetCurrencies)
+            resp = postedformulatedGetCurrencies.json()
+            if resp['status'] == 200:
+                data = {"table": resp['***/']}
+                """
+                listed =[]
+                for item in resp['***/']:
+                    listed.append(item['code'])
+                print(listed)
+                listed.clear()
+                """
+                return render_template("***/",data=data)
+            else:
+                data = {"message": f"Please contact our team and Kindly inform the issue. code {resp['status']} . Thanks"}
+                return render_template("***/",data=data)
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('***/***//valdsafe',methods=["GET"])
+def validatemedef():
+    if request.method == "GET":
+        try:
+            return render_template("***/")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('/***/valdsafeexpress',methods=["GET"])
+def validatedexpressmedef():
+    if request.method == "GET":
+        try:
+            return render_template("***/")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('/***/deletemesafe',methods=["GET"])
+def deletemedef():
+    if request.method == "GET":
+        try:
+            return render_template("***/")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('/***/changepasswordsafe',methods=["GET"])
+def changepassdef():
+    if request.method == "GET":
+        try:
+            return render_template("changepass.html")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route("***/delete/<datagoeshere>",methods=["GET"])
+def deletewithMongoDB(datagoeshere):
+    valueDel = {"***/": datagoeshere}
+    try:
+        valueDelResponse = collection_Name.delete_one(valueDel)
+        data = {"message": f"Deleted user with response {valueDelResponse.deleted_count}"}
+        return render_template("error.html",data=data)
+    except Exception as exceptionMessage:
+        data = {"message": f"Invalid method while deleting user.. {exceptionMessage}"}
+        return render_template("error.html",data=data)
+
+
+@app.route("/***//deltusr",methods=["GET","POST"])
+def deleteuserwithmongodb():
+    try:
+        getUserIDSafe = request.form.get("***/")
+        getemailSafe = request.form.get("***/")
+        getpassoneSafe = request.form.get("***/")
+        userbasedonId = collection_Name.find_one({"mongoID": ***/})
+        if userbasedonId['***/'] == ***/:
+            if userbasedonId['***/'] == ***/:
+                valueDel = {"***/": ***/}
+                try:
+                    valueDelResponse = collection_Name.delete_one(valueDel)
+                    try:
+                        data = {"message": f"Deleted user with response {valueDelResponse.deleted_count}"}
+                    except Exception as exceptionMessage:
+                        data = {"message": f"Deleted user method is approved and handled. Response {exceptionMessage}"}
+                    return render_template("error.html",data=data)
+                except:
+                    data = {"message": f"Invalid method while deleting the user.."}
+                    return render_template("error.html",data=data)
+            else:
+                data = {"message": "Wrong Data.. code eal. Please retry"}
+                return render_template("error.html",data=data)
+        else:
+            data = {"message": "Wrong Data.. code pwd. Please retry"}
+            return render_template("error.html",data=data)
+    except:
+        data = {"message": "Invalid method while deleting user.."}
+        return render_template("error.html",data=data)
+
+
+@app.route("***/betsafe",methods=["GET","POST"])
+def betwithmongodb():
+    try:
+        getUserIDSafe = request.form.get("***/")
+        getearningssafe = request.form.get("***/")
+        getpassoneSafe = request.form.get("***/")
+        getearningssafe = int(getearningssafe)
+        if getearningssafe > 9:
+            factor_bound = math.floor(***/ / 4)
+            low_bound = math.floor(***/ - factor_bound)
+            high_bound = math.floor(***/ + factor_bound)
+            bet_updated = math.floor(***/(***/,high_bound))
+            userbasedonId = collection_Name.find_one({"***/": ***/})
+            if int(userbasedonId['***/']) > getearningssafe:
+                bet_updated_cumulative = (userbasedonId['***/'] - ***/ + ***/)
+                if bet_updated_cumulative < 0:
+                    data = {"message": "Insufficient funds!"}
+                    return render_template("***/",data=data)
+                else:
+                    if userbasedonId['***/'] == ***/:
+                        valueUpdateold = {"mongoID": ***/}
+                        valueUpdatenew = {"$set": {"earnings": ***/}}
+                        valueredeemsafe = int(userbasedonId['redeem']) + bet_updated
+                        valueforredeem = {"$***/**/***/et": {"redeem": ***/}}
+                        try:
+                            collection_Name.update_one(valueUpdateold,valueUpdatenew)
+                            collection_Name.update_one(valueUpdateold,valueforredeem)
+                            data = {
+                                "message": f"We've charged {***/} for placing the Bet. You got rewarded with {***/}. Your updated Emeralds holdings are {***/}. Overall Profits : {***/} "}
+                            return render_template("error.html",data=data)
+                        except Exception as exceptionMessage:
+                            data = {"message": f"Invalid process with code udusr while Updating user.. {exceptionMessage}"}
+                            return render_template("error.html",data=data)
+                    else:
+                        data = {"message": "Wrong Data.. code pwd. Please retry"}
+                        return render_template("error.html",data=data)
+            else:
+                data = {"message": "Insufficient Emeralds in your wallet for placing a Bet"}
+                return render_template("error.html",data=data)
+        else:
+            data = {"message": "The Minimum bet should be 10 Emeralds. Please retry"}
+            return render_template("error.html",data=data)
+    except:
+        data = {"message": "Invalid method while Placing a Bet.."}
+        return render_template("error.html",data=data)
+
+
+@app.route("/***/autofausafe",methods=["GET","POST"])
+def autofacucetsafe():
+    try:
+        try:
+            tobeGeerated = []
+            usergot = []
+            currenciesListed = ['BTC', 'BCH', 'BCN', 'DASH', 'DGB', 'ETH', 'EXG', 'EXS', 'LSK', 'LTC', 'XMR', 'STRAX', 'NEO', 'PPC', 'XRP', 'TRX', 'ZEC', 'WAVES', 'ETC', 'ADA', 'RDD', 'XTZ', 'PIVX', 'VTC', 'KMD', 'ZEN', 'USDT', 'RVN', 'BNB','DOGE' ,'BTT']
+            for item in currenciesListed:
+                value = request.form.get(item)
+                if value:
+                    tobeGeerated.append(value)
+            getUserIDSafe = request.form.get("***/")
+            getpassoneSafe = request.form.get("***/")
+            getaddressFaucet = request.form.get("***/")
+            getuserCrypto = request.form.get("***/")
+            userbasedonId = collection_Name.find_one({"***/": ***/})
+            if userbasedonId['***/'] == getpassoneSafe:
+                streakfinder = int(userbasedonId['***/'])
+                try:
+                    formulatedGetverifyaddress = {"api_key": '***/',"address": ***/}
+                    urlformulatedGetaddress = "https://faucetpay.io/api/v1/***/"
+                    postedformulatedGetaddress = requests.post(urlformulatedGetaddress,data=***/)
+                    respaddress = ***/()
+                    if respaddress['status'] == 200:
+                        for currency in tobeGeerated:
+                            if streakfinder > 0:
+                                formulatedGetverifybalance = {"api_key": '***/',"currency": ***/()}
+                                urlformulatedGetbalance = "***/balance"
+                                postedformulatedGetbalance = requests.post(***/,data=***/)
+                                respbalance = postedformulatedGetbalance.json()
+                                if respbalance['status'] == 200:
+                                    if int(respbalance['***/']) > 10:
+                                        formulatedGetverifypay = {"api_key": '***/',"currency": ***/(),"to": ***/,"amount": 1}
+                                        urlformulatedGetpay = "https://***//***/nd"
+                                        postedformulatedGetpay = requests.post(***/,data=***/)
+                                        resppay = postedformulatedGetpay.json()
+                                        if resppay['status'] == 200:
+                                            streakfinder = streakfinder - 1
+                                            usergot.append(currency)
+                                        else:
+                                            pass
+                                    else:
+                                        pass
+                                else:
+                                    pass
+                        try:
+                            valueUpdateold = {"***/": ***/}
+                            valueredeemsafe = int(***/['***/']) + (int(***/['***/'])*10)
+                            valueforredeem = {"$***/": {"***/": ***/}}
+                            collection_Name.update_one(***/,valueforredeem)
+                            valueforredeemstreakiy = {"$***/": {"***/": 0}}
+                            collection_Name.update_one(valueUpdateold,valueforredeemstreakiy)
+                            data = {"message": f"***/. {respaddress['***/']} is Hash of the user with Gained Cryptos in {***/}. overall Profit {***/}. autofaucet Hash Code {***/} "}
+                            tobeGeerated.clear()
+                            usergot.clear()
+                            return render_template("error.html",data=data)
+                        except:
+                            tobeGeerated.clear()
+                            usergot.clear()
+                            data = {"message": "Please contact us with ref id. pdvyfp.."}
+                            return render_template("error.html",data=data)
+                    else:
+                        formulatedGetverifyaddressex = {"api_key": '***/',"user_token": '***/',"userId": ***/}
+                        urlformulatedGetaddressex = "https://***//***/***/***//v2/***/"
+                        postedformulatedGetaddressex = requests.post(***/,data=***/)
+                        respaddress = postedformulatedGetaddressex.json()
+                        if respaddress['status'] == 200:
+                            for currency in tobeGeerated:
+                                if streakfinder > 0:
+                                    formulatedGetverifybalancex = {"***/": '***/',"***/": '***/',"currency": ***/()}
+                                    urlformulatedGetbalancex = "https://***//***/-***//v2/getBalance"
+                                    postedformulatedGetbalancex = requests.post(urlformulatedGetbalancex,data=formulatedGetverifybalancex)
+                                    respbalance = postedformulatedGetbalancex.json()
+                                    if respbalance['status'] == 200:
+                                        amounttobesent = 10
+                                        if int(respbalance['balance']) > amounttobesent:
+                                            formulatedGetverifypay = {"user_token": 'bch1',"currency": ***/(),"api_key": '***/',"userId": ***/,"amount": 1}
+                                            urlformulatedGetpay = "https:/***/***//***/-***//v2/***/"
+                                            postedformulatedGetpay = requests.post(***/,data=***/)
+                                            resppay = postedformulatedGetpay.json()
+                                            if resppay['status'] == 200:
+                                                streakfinder = streakfinder - 1
+                                                usergot.append(currency)
+                                            else:
+                                                pass
+                                        else:
+                                            pass
+                                    else:
+                                        pass
+                            try:
+                                valueUpdateold = {"mongoID": getUserIDSafe}
+                                ***/ = int(***/['***/']) + (***/(***/['streak']) * 10)
+                                valueforredeem = {"$set": {"redeem": ***/}}
+                                valueforredeemstreaky = {"$set": {"streak": 0}}
+                                collection_Name.update_one(***/,***/)
+                                collection_Name.update_one(***/,valuef***/***/)
+                                data = {"message": f"Success. {***/} is ID of the user with Gained Cryptos in {***/}. overall Profit {***/}. autofaucet Hash Code {***/} "}
+                                tobeGeerated.clear()
+                                usergot.clear()
+                                return render_template("error.html",data=data)
+                            except:
+                                tobeGeerated.clear()
+                                usergot.clear()
+                                data = {"message": "Please contact us with ref id. pdvyfp.."}
+                                return render_template("error.html",data=data)
+                        else:
+                            tobeGeerated.clear()
+                            usergot.clear()
+                            data = {"message": "Invalid Payment IDs.."}
+                            return render_template("error.html",data=data)
+                except Exception as exceptionMessage:
+                    tobeGeerated.clear()
+                    usergot.clear()
+                    data = {"message": f"Please contact us with ref id. mdamtntupd.. issue : {exceptionMessage}"}
+                    return render_template("error.html",data=data)
+            else:
+                tobeGeerated.clear()
+                usergot.clear()
+                data = {"message": "inCorrect Password. Please use code pwd."}
+                return render_template("error.html",data=data)
+        except:
+            data = {"message": "Invalid method.."}
+            return render_template("error.html",data=data)
+    except:
+        data = {"message": "Invalid method while triggering Autofaucet.."}
+        return render_template("error.html",data=data)
+
+
+import ssl
+from flask import Flask,render_template,request
+from pymongo import MongoClient
+import datetime
+import requests
+import random
+import math
+
+
+app = Flask(__name__,template_folder='Utility')
+jinja2_environment = {
+    'comment_start_string': '{##',
+}
+try:
+    client = MongoClient("*****",ssl_cert_reqs=ssl.CERT_NONE)
+    db = client["****"]
+    collection_Name = db["****"]
+    print('Connection with Database - checked')
+except Exception as ex:
+    print(ex)
+
+
+@app.route('/',methods=["GET"])
+def serverping():
+    if request.method == "GET":
+        try:
+            return render_template("***")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data),200
+    else:
+        data = {"message": "POST method is not Allowed.."}
+        return render_template("error.html",data=data),404
+
+
+@app.route('/error',methods=["GET","POST"])
+def errorping():
+    try:
+        data = {"message": "Page not Found!"}
+        return render_template("error.html",data=data),404
+    except Exception as exceptionMessage:
+        data = {"message": f"Invalid method.. {exceptionMessage}"}
+        return render_template("error.html",data=data),404
+
+
+@app.route('***/partnerwithus',methods=["GET"])
+def partnerwithus():
+    if request.method == "GET":
+        try:
+            return render_template("***")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('***/cryptosweoffer',methods=["GET"])
+def cryptooffer():
+    if request.method == "GET":
+        try:
+            return render_template("***")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('***/howthisworks',methods=["GET"])
+def howwork():
+    if request.method == "GET":
+        try:
+            return render_template("***")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('***/aboutus',methods=["GET"])
+def aboutusdef():
+    if request.method == "GET":
+        try:
+            return render_template("***")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('***/contactus',methods=["GET"])
+def contactme():
+    if request.method == "GET":
+        try:
+            return render_template("***/")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('***/paymesafe',methods=["GET"])
+def paymesafe():
+    if request.method == "GET":
+        try:
+            formulatedGetCurrencies = {"api_key": '***/'}
+            urlformulatedGetCurrencies = "https://faucetpay***/"
+            postedformulatedGetCurrencies = requests.post(urlformulatedGetCurrencies,data=formulatedGetCurrencies)
+            resp = postedformulatedGetCurrencies.json()
+            if resp['status'] == 200:
+                data = {"table": resp['***/']}
+                return render_template("***/",data=data)
+            else:
+                data = {
+                    "message": f"Please contact our team and Kindly inform the issue. code {resp['status']} . Thanks"}
+                return render_template("error.html",data=data)
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('/***/paymesafeexpress',methods=["GET"])
+def paymeexpresssafe():
+    if request.method == "GET":
+        try:
+            formulatedGetCurrencies = {"api_key": '***/','user_token':'***/'}
+            urlformulatedGetCurrencies = "https://***//***/-***//v2/getAvailableCurrencies"
+            postedformulatedGetCurrencies = requests.post(urlformulatedGetCurrencies,data=formulatedGetCurrencies)
+            resp = postedformulatedGetCurrencies.json()
+            if resp['status'] == 200:
+                data = {"table": resp['***/']}
+                """
+                listed =[]
+                for item in resp['***/']:
+                    listed.append(item['code'])
+                print(listed)
+                listed.clear()
+                """
+                return render_template("***/",data=data)
+            else:
+                data = {"message": f"Please contact our team and Kindly inform the issue. code {resp['status']} . Thanks"}
+                return render_template("***/",data=data)
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('***/***//valdsafe',methods=["GET"])
+def validatemedef():
+    if request.method == "GET":
+        try:
+            return render_template("***/")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('/***/valdsafeexpress',methods=["GET"])
+def validatedexpressmedef():
+    if request.method == "GET":
+        try:
+            return render_template("***/")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('/***/deletemesafe',methods=["GET"])
+def deletemedef():
+    if request.method == "GET":
+        try:
+            return render_template("***/")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('/***/changepasswordsafe',methods=["GET"])
+def changepassdef():
+    if request.method == "GET":
+        try:
+            return render_template("changepass.html")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route("***/delete/<datagoeshere>",methods=["GET"])
+def deletewithMongoDB(datagoeshere):
+    valueDel = {"***/": datagoeshere}
+    try:
+        valueDelResponse = collection_Name.delete_one(valueDel)
+        data = {"message": f"Deleted user with response {valueDelResponse.deleted_count}"}
+        return render_template("error.html",data=data)
+    except Exception as exceptionMessage:
+        data = {"message": f"Invalid method while deleting user.. {exceptionMessage}"}
+        return render_template("error.html",data=data)
+
+
+@app.route("/***//deltusr",methods=["GET","POST"])
+def deleteuserwithmongodb():
+    try:
+        getUserIDSafe = request.form.get("***/")
+        getemailSafe = request.form.get("***/")
+        getpassoneSafe = request.form.get("***/")
+        userbasedonId = collection_Name.find_one({"mongoID": ***/})
+        if userbasedonId['***/'] == ***/:
+            if userbasedonId['***/'] == ***/:
+                valueDel = {"***/": ***/}
+                try:
+                    valueDelResponse = collection_Name.delete_one(valueDel)
+                    try:
+                        data = {"message": f"Deleted user with response {valueDelResponse.deleted_count}"}
+                    except Exception as exceptionMessage:
+                        data = {"message": f"Deleted user method is approved and handled. Response {exceptionMessage}"}
+                    return render_template("error.html",data=data)
+                except:
+                    data = {"message": f"Invalid method while deleting the user.."}
+                    return render_template("error.html",data=data)
+            else:
+                data = {"message": "Wrong Data.. code eal. Please retry"}
+                return render_template("error.html",data=data)
+        else:
+            data = {"message": "Wrong Data.. code pwd. Please retry"}
+            return render_template("error.html",data=data)
+    except:
+        data = {"message": "Invalid method while deleting user.."}
+        return render_template("error.html",data=data)
+
+
+@app.route("***/betsafe",methods=["GET","POST"])
+def betwithmongodb():
+    try:
+        getUserIDSafe = request.form.get("***/")
+        getearningssafe = request.form.get("***/")
+        getpassoneSafe = request.form.get("***/")
+        getearningssafe = int(getearningssafe)
+        if getearningssafe > 9:
+            factor_bound = math.floor(***/ / 4)
+            low_bound = math.floor(***/ - factor_bound)
+            high_bound = math.floor(***/ + factor_bound)
+            bet_updated = math.floor(***/(***/,high_bound))
+            userbasedonId = collection_Name.find_one({"***/": ***/})
+            if int(userbasedonId['***/']) > getearningssafe:
+                bet_updated_cumulative = (userbasedonId['***/'] - ***/ + ***/)
+                if bet_updated_cumulative < 0:
+                    data = {"message": "Insufficient funds!"}
+                    return render_template("***/",data=data)
+                else:
+                    if userbasedonId['***/'] == ***/:
+                        valueUpdateold = {"mongoID": ***/}
+                        valueUpdatenew = {"$set": {"earnings": ***/}}
+                        valueredeemsafe = int(userbasedonId['redeem']) + bet_updated
+                        valueforredeem = {"$***/**/***/et": {"redeem": ***/}}
+                        try:
+                            collection_Name.update_one(valueUpdateold,valueUpdatenew)
+                            collection_Name.update_one(valueUpdateold,valueforredeem)
+                            data = {
+                                "message": f"We've charged {***/} for placing the Bet. You got rewarded with {***/}. Your updated Emeralds holdings are {***/}. Overall Profits : {***/} "}
+                            return render_template("error.html",data=data)
+                        except Exception as exceptionMessage:
+                            data = {"message": f"Invalid process with code udusr while Updating user.. {exceptionMessage}"}
+                            return render_template("error.html",data=data)
+                    else:
+                        data = {"message": "Wrong Data.. code pwd. Please retry"}
+                        return render_template("error.html",data=data)
+            else:
+                data = {"message": "Insufficient Emeralds in your wallet for placing a Bet"}
+                return render_template("error.html",data=data)
+        else:
+            data = {"message": "The Minimum bet should be 10 Emeralds. Please retry"}
+            return render_template("error.html",data=data)
+    except:
+        data = {"message": "Invalid method while Placing a Bet.."}
+        return render_template("error.html",data=data)
+
+
+@app.route("/***/autofausafe",methods=["GET","POST"])
+def autofacucetsafe():
+    try:
+        try:
+            tobeGeerated = []
+            usergot = []
+            currenciesListed = ['BTC', 'BCH', 'BCN', 'DASH', 'DGB', 'ETH', 'EXG', 'EXS', 'LSK', 'LTC', 'XMR', 'STRAX', 'NEO', 'PPC', 'XRP', 'TRX', 'ZEC', 'WAVES', 'ETC', 'ADA', 'RDD', 'XTZ', 'PIVX', 'VTC', 'KMD', 'ZEN', 'USDT', 'RVN', 'BNB','DOGE' ,'BTT']
+            for item in currenciesListed:
+                value = request.form.get(item)
+                if value:
+                    tobeGeerated.append(value)
+            getUserIDSafe = request.form.get("***/")
+            getpassoneSafe = request.form.get("***/")
+            getaddressFaucet = request.form.get("***/")
+            getuserCrypto = request.form.get("***/")
+            userbasedonId = collection_Name.find_one({"***/": ***/})
+            if userbasedonId['***/'] == getpassoneSafe:
+                streakfinder = int(userbasedonId['***/'])
+                try:
+                    formulatedGetverifyaddress = {"api_key": '***/',"address": ***/}
+                    urlformulatedGetaddress = "https://faucetpay.io/api/v1/***/"
+                    postedformulatedGetaddress = requests.post(urlformulatedGetaddress,data=***/)
+                    respaddress = ***/()
+                    if respaddress['status'] == 200:
+                        for currency in tobeGeerated:
+                            if streakfinder > 0:
+                                formulatedGetverifybalance = {"api_key": '***/',"currency": ***/()}
+                                urlformulatedGetbalance = "***/balance"
+                                postedformulatedGetbalance = requests.post(***/,data=***/)
+                                respbalance = postedformulatedGetbalance.json()
+                                if respbalance['status'] == 200:
+                                    if int(respbalance['***/']) > 10:
+                                        formulatedGetverifypay = {"api_key": '***/',"currency": ***/(),"to": ***/,"amount": 1}
+                                        urlformulatedGetpay = "https://***//***/nd"
+                                        postedformulatedGetpay = requests.post(***/,data=***/)
+                                        resppay = postedformulatedGetpay.json()
+                                        if resppay['status'] == 200:
+                                            streakfinder = streakfinder - 1
+                                            usergot.append(currency)
+                                        else:
+                                            pass
+                                    else:
+                                        pass
+                                else:
+                                    pass
+                        try:
+                            valueUpdateold = {"***/": ***/}
+                            valueredeemsafe = int(***/['***/']) + (int(***/['***/'])*10)
+                            valueforredeem = {"$***/": {"***/": ***/}}
+                            collection_Name.update_one(***/,valueforredeem)
+                            valueforredeemstreakiy = {"$***/": {"***/": 0}}
+                            collection_Name.update_one(valueUpdateold,valueforredeemstreakiy)
+                            data = {"message": f"***/. {respaddress['***/']} is Hash of the user with Gained Cryptos in {***/}. overall Profit {***/}. autofaucet Hash Code {***/} "}
+                            tobeGeerated.clear()
+                            usergot.clear()
+                            return render_template("error.html",data=data)
+                        except:
+                            tobeGeerated.clear()
+                            usergot.clear()
+                            data = {"message": "Please contact us with ref id. pdvyfp.."}
+                            return render_template("error.html",data=data)
+                    else:
+                        formulatedGetverifyaddressex = {"api_key": '***/',"user_token": '***/',"userId": ***/}
+                        urlformulatedGetaddressex = "https://***//***/***/***//v2/***/"
+                        postedformulatedGetaddressex = requests.post(***/,data=***/)
+                        respaddress = postedformulatedGetaddressex.json()
+                        if respaddress['status'] == 200:
+                            for currency in tobeGeerated:
+                                if streakfinder > 0:
+                                    formulatedGetverifybalancex = {"***/": '***/',"***/": '***/',"currency": ***/()}
+                                    urlformulatedGetbalancex = "https://***//***/-***//v2/getBalance"
+                                    postedformulatedGetbalancex = requests.post(urlformulatedGetbalancex,data=formulatedGetverifybalancex)
+                                    respbalance = postedformulatedGetbalancex.json()
+                                    if respbalance['status'] == 200:
+                                        amounttobesent = 10
+                                        if int(respbalance['balance']) > amounttobesent:
+                                            formulatedGetverifypay = {"user_token": 'bch1',"currency": ***/(),"api_key": '***/',"userId": ***/,"amount": 1}
+                                            urlformulatedGetpay = "https:/***/***//***/-***//v2/***/"
+                                            postedformulatedGetpay = requests.post(***/,data=***/)
+                                            resppay = postedformulatedGetpay.json()
+                                            if resppay['status'] == 200:
+                                                streakfinder = streakfinder - 1
+                                                usergot.append(currency)
+                                            else:
+                                                pass
+                                        else:
+                                            pass
+                                    else:
+                                        pass
+                            try:
+                                valueUpdateold = {"mongoID": getUserIDSafe}
+                                ***/ = int(***/['***/']) + (***/(***/['streak']) * 10)
+                                valueforredeem = {"$set": {"redeem": ***/}}
+                                valueforredeemstreaky = {"$set": {"streak": 0}}
+                                collection_Name.update_one(***/,***/)
+                                collection_Name.update_one(***/,valuef***/***/)
+                                data = {"message": f"Success. {***/} is ID of the user with Gained Cryptos in {***/}. overall Profit {***/}. autofaucet Hash Code {***/} "}
+                                tobeGeerated.clear()
+                                usergot.clear()
+                                return render_template("error.html",data=data)
+                            except:
+                                tobeGeerated.clear()
+                                usergot.clear()
+                                data = {"message": "Please contact us with ref id. pdvyfp.."}
+                                return render_template("error.html",data=data)
+                        else:
+                            tobeGeerated.clear()
+                            usergot.clear()
+                            data = {"message": "Invalid Payment IDs.."}
+                            return render_template("error.html",data=data)
+                except Exception as exceptionMessage:
+                    tobeGeerated.clear()
+                    usergot.clear()
+                    data = {"message": f"Please contact us with ref id. mdamtntupd.. issue : {exceptionMessage}"}
+                    return render_template("error.html",data=data)
+            else:
+                tobeGeerated.clear()
+                usergot.clear()
+                data = {"message": "inCorrect Password. Please use code pwd."}
+                return render_template("error.html",data=data)
+        except:
+            data = {"message": "Invalid method.."}
+            return render_template("error.html",data=data)
+    except:
+        data = {"message": "Invalid method while triggering Autofaucet.."}
+        return render_template("error.html",data=data)
+
+
+import ssl
+from flask import Flask,render_template,request
+from pymongo import MongoClient
+import datetime
+import requests
+import random
+import math
+
+
+app = Flask(__name__,template_folder='Utility')
+jinja2_environment = {
+    'comment_start_string': '{##',
+}
+try:
+    client = MongoClient("*****",ssl_cert_reqs=ssl.CERT_NONE)
+    db = client["****"]
+    collection_Name = db["****"]
+    print('Connection with Database - checked')
+except Exception as ex:
+    print(ex)
+
+
+@app.route('/',methods=["GET"])
+def serverping():
+    if request.method == "GET":
+        try:
+            return render_template("***")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data),200
+    else:
+        data = {"message": "POST method is not Allowed.."}
+        return render_template("error.html",data=data),404
+
+
+@app.route('/error',methods=["GET","POST"])
+def errorping():
+    try:
+        data = {"message": "Page not Found!"}
+        return render_template("error.html",data=data),404
+    except Exception as exceptionMessage:
+        data = {"message": f"Invalid method.. {exceptionMessage}"}
+        return render_template("error.html",data=data),404
+
+
+@app.route('***/partnerwithus',methods=["GET"])
+def partnerwithus():
+    if request.method == "GET":
+        try:
+            return render_template("***")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('***/cryptosweoffer',methods=["GET"])
+def cryptooffer():
+    if request.method == "GET":
+        try:
+            return render_template("***")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('***/howthisworks',methods=["GET"])
+def howwork():
+    if request.method == "GET":
+        try:
+            return render_template("***")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('***/aboutus',methods=["GET"])
+def aboutusdef():
+    if request.method == "GET":
+        try:
+            return render_template("***")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('***/contactus',methods=["GET"])
+def contactme():
+    if request.method == "GET":
+        try:
+            return render_template("***/")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('***/paymesafe',methods=["GET"])
+def paymesafe():
+    if request.method == "GET":
+        try:
+            formulatedGetCurrencies = {"api_key": '***/'}
+            urlformulatedGetCurrencies = "https://faucetpay***/"
+            postedformulatedGetCurrencies = requests.post(urlformulatedGetCurrencies,data=formulatedGetCurrencies)
+            resp = postedformulatedGetCurrencies.json()
+            if resp['status'] == 200:
+                data = {"table": resp['***/']}
+                return render_template("***/",data=data)
+            else:
+                data = {
+                    "message": f"Please contact our team and Kindly inform the issue. code {resp['status']} . Thanks"}
+                return render_template("error.html",data=data)
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('/***/paymesafeexpress',methods=["GET"])
+def paymeexpresssafe():
+    if request.method == "GET":
+        try:
+            formulatedGetCurrencies = {"api_key": '***/','user_token':'***/'}
+            urlformulatedGetCurrencies = "https://***//***/-***//v2/getAvailableCurrencies"
+            postedformulatedGetCurrencies = requests.post(urlformulatedGetCurrencies,data=formulatedGetCurrencies)
+            resp = postedformulatedGetCurrencies.json()
+            if resp['status'] == 200:
+                data = {"table": resp['***/']}
+                """
+                listed =[]
+                for item in resp['***/']:
+                    listed.append(item['code'])
+                print(listed)
+                listed.clear()
+                """
+                return render_template("***/",data=data)
+            else:
+                data = {"message": f"Please contact our team and Kindly inform the issue. code {resp['status']} . Thanks"}
+                return render_template("***/",data=data)
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('***/***//valdsafe',methods=["GET"])
+def validatemedef():
+    if request.method == "GET":
+        try:
+            return render_template("***/")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('/***/valdsafeexpress',methods=["GET"])
+def validatedexpressmedef():
+    if request.method == "GET":
+        try:
+            return render_template("***/")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('/***/deletemesafe',methods=["GET"])
+def deletemedef():
+    if request.method == "GET":
+        try:
+            return render_template("***/")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route('/***/changepasswordsafe',methods=["GET"])
+def changepassdef():
+    if request.method == "GET":
+        try:
+            return render_template("changepass.html")
+        except Exception as exceptionMessage:
+            data = {"message": f"Invalid method.. {exceptionMessage}"}
+            return render_template("error.html",data=data)
+    else:
+        data = {"message": "Method is not allowed.."}
+        return render_template("error.html",data=data)
+
+
+@app.route("***/delete/<datagoeshere>",methods=["GET"])
+def deletewithMongoDB(datagoeshere):
+    valueDel = {"***/": datagoeshere}
+    try:
+        valueDelResponse = collection_Name.delete_one(valueDel)
+        data = {"message": f"Deleted user with response {valueDelResponse.deleted_count}"}
+        return render_template("error.html",data=data)
+    except Exception as exceptionMessage:
+        data = {"message": f"Invalid method while deleting user.. {exceptionMessage}"}
+        return render_template("error.html",data=data)
+
+
+@app.route("/***//deltusr",methods=["GET","POST"])
+def deleteuserwithmongodb():
+    try:
+        getUserIDSafe = request.form.get("***/")
+        getemailSafe = request.form.get("***/")
+        getpassoneSafe = request.form.get("***/")
+        userbasedonId = collection_Name.find_one({"mongoID": ***/})
+        if userbasedonId['***/'] == ***/:
+            if userbasedonId['***/'] == ***/:
+                valueDel = {"***/": ***/}
+                try:
+                    valueDelResponse = collection_Name.delete_one(valueDel)
+                    try:
+                        data = {"message": f"Deleted user with response {valueDelResponse.deleted_count}"}
+                    except Exception as exceptionMessage:
+                        data = {"message": f"Deleted user method is approved and handled. Response {exceptionMessage}"}
+                    return render_template("error.html",data=data)
+                except:
+                    data = {"message": f"Invalid method while deleting the user.."}
+                    return render_template("error.html",data=data)
+            else:
+                data = {"message": "Wrong Data.. code eal. Please retry"}
+                return render_template("error.html",data=data)
+        else:
+            data = {"message": "Wrong Data.. code pwd. Please retry"}
+            return render_template("error.html",data=data)
+    except:
+        data = {"message": "Invalid method while deleting user.."}
+        return render_template("error.html",data=data)
+
+
+@app.route("***/betsafe",methods=["GET","POST"])
+def betwithmongodb():
+    try:
+        getUserIDSafe = request.form.get("***/")
+        getearningssafe = request.form.get("***/")
+        getpassoneSafe = request.form.get("***/")
+        getearningssafe = int(getearningssafe)
+        if getearningssafe > 9:
+            factor_bound = math.floor(***/ / 4)
+            low_bound = math.floor(***/ - factor_bound)
+            high_bound = math.floor(***/ + factor_bound)
+            bet_updated = math.floor(***/(***/,high_bound))
+            userbasedonId = collection_Name.find_one({"***/": ***/})
+            if int(userbasedonId['***/']) > getearningssafe:
+                bet_updated_cumulative = (userbasedonId['***/'] - ***/ + ***/)
+                if bet_updated_cumulative < 0:
+                    data = {"message": "Insufficient funds!"}
+                    return render_template("***/",data=data)
+                else:
+                    if userbasedonId['***/'] == ***/:
+                        valueUpdateold = {"mongoID": ***/}
+                        valueUpdatenew = {"$set": {"earnings": ***/}}
+                        valueredeemsafe = int(userbasedonId['redeem']) + bet_updated
+                        valueforredeem = {"$***/**/***/et": {"redeem": ***/}}
+                        try:
+                            collection_Name.update_one(valueUpdateold,valueUpdatenew)
+                            collection_Name.update_one(valueUpdateold,valueforredeem)
+                            data = {
+                                "message": f"We've charged {***/} for placing the Bet. You got rewarded with {***/}. Your updated Emeralds holdings are {***/}. Overall Profits : {***/} "}
+                            return render_template("error.html",data=data)
+                        except Exception as exceptionMessage:
+                            data = {"message": f"Invalid process with code udusr while Updating user.. {exceptionMessage}"}
+                            return render_template("error.html",data=data)
+                    else:
+                        data = {"message": "Wrong Data.. code pwd. Please retry"}
+                        return render_template("error.html",data=data)
+            else:
+                data = {"message": "Insufficient Emeralds in your wallet for placing a Bet"}
+                return render_template("error.html",data=data)
+        else:
+            data = {"message": "The Minimum bet should be 10 Emeralds. Please retry"}
+            return render_template("error.html",data=data)
+    except:
+        data = {"message": "Invalid method while Placing a Bet.."}
+        return render_template("error.html",data=data)
+
+
+@app.route("/***/autofausafe",methods=["GET","POST"])
+def autofacucetsafe():
+    try:
+        try:
+            tobeGeerated = []
+            usergot = []
+            currenciesListed = ['BTC', 'BCH', 'BCN', 'DASH', 'DGB', 'ETH', 'EXG', 'EXS', 'LSK', 'LTC', 'XMR', 'STRAX', 'NEO', 'PPC', 'XRP', 'TRX', 'ZEC', 'WAVES', 'ETC', 'ADA', 'RDD', 'XTZ', 'PIVX', 'VTC', 'KMD', 'ZEN', 'USDT', 'RVN', 'BNB','DOGE' ,'BTT']
+            for item in currenciesListed:
+                value = request.form.get(item)
+                if value:
+                    tobeGeerated.append(value)
+            getUserIDSafe = request.form.get("***/")
+            getpassoneSafe = request.form.get("***/")
+            getaddressFaucet = request.form.get("***/")
+            getuserCrypto = request.form.get("***/")
+            userbasedonId = collection_Name.find_one({"***/": ***/})
+            if userbasedonId['***/'] == getpassoneSafe:
+                streakfinder = int(userbasedonId['***/'])
+                try:
+                    formulatedGetverifyaddress = {"api_key": '***/',"address": ***/}
+                    urlformulatedGetaddress = "https://faucetpay.io/api/v1/***/"
+                    postedformulatedGetaddress = requests.post(urlformulatedGetaddress,data=***/)
+                    respaddress = ***/()
+                    if respaddress['status'] == 200:
+                        for currency in tobeGeerated:
+                            if streakfinder > 0:
+                                formulatedGetverifybalance = {"api_key": '***/',"currency": ***/()}
+                                urlformulatedGetbalance = "***/balance"
+                                postedformulatedGetbalance = requests.post(***/,data=***/)
+                                respbalance = postedformulatedGetbalance.json()
+                                if respbalance['status'] == 200:
+                                    if int(respbalance['***/']) > 10:
+                                        formulatedGetverifypay = {"api_key": '***/',"currency": ***/(),"to": ***/,"amount": 1}
+                                        urlformulatedGetpay = "https://***//***/nd"
+                                        postedformulatedGetpay = requests.post(***/,data=***/)
+                                        resppay = postedformulatedGetpay.json()
+                                        if resppay['status'] == 200:
+                                            streakfinder = streakfinder - 1
+                                            usergot.append(currency)
+                                        else:
+                                            pass
+                                    else:
+                                        pass
+                                else:
+                                    pass
+                        try:
+                            valueUpdateold = {"***/": ***/}
+                            valueredeemsafe = int(***/['***/']) + (int(***/['***/'])*10)
+                            valueforredeem = {"$***/": {"***/": ***/}}
+                            collection_Name.update_one(***/,valueforredeem)
+                            valueforredeemstreakiy = {"$***/": {"***/": 0}}
+                            collection_Name.update_one(valueUpdateold,valueforredeemstreakiy)
+                            data = {"message": f"***/. {respaddress['***/']} is Hash of the user with Gained Cryptos in {***/}. overall Profit {***/}. autofaucet Hash Code {***/} "}
+                            tobeGeerated.clear()
+                            usergot.clear()
+                            return render_template("error.html",data=data)
+                        except:
+                            tobeGeerated.clear()
+                            usergot.clear()
+                            data = {"message": "Please contact us with ref id. pdvyfp.."}
+                            return render_template("error.html",data=data)
+                    else:
+                        formulatedGetverifyaddressex = {"api_key": '***/',"user_token": '***/',"userId": ***/}
+                        urlformulatedGetaddressex = "https://***//***/***/***//v2/***/"
+                        postedformulatedGetaddressex = requests.post(***/,data=***/)
+                        respaddress = postedformulatedGetaddressex.json()
+                        if respaddress['status'] == 200:
+                            for currency in tobeGeerated:
+                                if streakfinder > 0:
+                                    formulatedGetverifybalancex = {"***/": '***/',"***/": '***/',"currency": ***/()}
+                                    urlformulatedGetbalancex = "https://***//***/-***//v2/getBalance"
+                                    postedformulatedGetbalancex = requests.post(urlformulatedGetbalancex,data=formulatedGetverifybalancex)
+                                    respbalance = postedformulatedGetbalancex.json()
+                                    if respbalance['status'] == 200:
+                                        amounttobesent = 10
+                                        if int(respbalance['balance']) > amounttobesent:
+                                            formulatedGetverifypay = {"user_token": 'bch1',"currency": ***/(),"api_key": '***/',"userId": ***/,"amount": 1}
+                                            urlformulatedGetpay = "https:/***/***//***/-***//v2/***/"
+                                            postedformulatedGetpay = requests.post(***/,data=***/)
+                                            resppay = postedformulatedGetpay.json()
+                                            if resppay['status'] == 200:
+                                                streakfinder = streakfinder - 1
+                                                usergot.append(currency)
+                                            else:
+                                                pass
+                                        else:
+                                            pass
+                                    else:
+                                        pass
+                            try:
+                                valueUpdateold = {"mongoID": getUserIDSafe}
+                                ***/ = int(***/['***/']) + (***/(***/['streak']) * 10)
+                                valueforredeem = {"$set": {"redeem": ***/}}
+                                valueforredeemstreaky = {"$set": {"streak": 0}}
+                                collection_Name.update_one(***/,***/)
+                                collection_Name.update_one(***/,valuef***/***/)
+                                data = {"message": f"Success. {***/} is ID of the user with Gained Cryptos in {***/}. overall Profit {***/}. autofaucet Hash Code {***/} "}
+                                tobeGeerated.clear()
+                                usergot.clear()
+                                return render_template("error.html",data=data)
+                            except:
+                                tobeGeerated.clear()
+                                usergot.clear()
+                                data = {"message": "Please contact us with ref id. pdvyfp.."}
+                                return render_template("error.html",data=data)
+                        else:
+                            tobeGeerated.clear()
+                            usergot.clear()
+                            data = {"message": "Invalid Payment IDs.."}
+                            return render_template("error.html",data=data)
+                except Exception as exceptionMessage:
+                    tobeGeerated.clear()
+                    usergot.clear()
+                    data = {"message": f"Please contact us with ref id. mdamtntupd.. issue : {exceptionMessage}"}
+                    return render_template("error.html",data=data)
+            else:
+                tobeGeerated.clear()
+                usergot.clear()
+                data = {"message": "inCorrect Password. Please use code pwd."}
+                return render_template("error.html",data=data)
+        except:
+            data = {"message": "Invalid method.."}
+            return render_template("error.html",data=data)
+    except:
+        data = {"message": "Invalid method while triggering Autofaucet.."}
+        return render_template("error.html",data=data)
+
+
