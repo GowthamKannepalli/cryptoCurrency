@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title> Secured Main Page </title>
+    <style>
+
+        @keyframes animate {
+            0%{
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+                border-radius: 0;
+            }
+            100%{
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+                border-radius: 50%;
+            }
+        }
+        .background {
+            position: absolute;
+            height: 25%;
+            width: 100vw;
+            top: 0;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            background: #0a0a0a;
+            overflow: hidden;
+        }
+        .background li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 20px;
+            height: 10px;
+            background: rgba(33,125,187,1);
+            animation: animate 10s linear infinite;
+        }
+
+        .background li:nth-child(0) {
+            left: 72%;
+            width: 72px;
+            height: 72px;
+            bottom: -72px;
+            animation-delay: 1s;
+        }
+        .background li:nth-child(1) {
+            left: 1%;
+            width: 97px;
+            height: 97px;
+            bottom: -97px;
+            animation-delay: 1s;
+        }
+        .background li:nth-child(2) {
+            left: 53%;
+            width: 162px;
+            height: 162px;
+            bottom: -162px;
+            animation-delay: 4s;
+        }
+        .background li:nth-child(3) {
+            left: 50%;
+            width: 48px;
+            height: 48px;
+            bottom: -48px;
+            animation-delay: 13s;
+        }
+        .background li:nth-child(4) {
+            left: 62%;
+            width: 67px;
+            height: 67px;
+            bottom: -67px;
+            animation-delay: 2s;
+        }
+        .background li:nth-child(5) {
+            left: 62%;
+            width: 41px;
+            height: 41px;
+            bottom: -41px;
+            animation-delay: 8s;
+        }
+        .background li:nth-child(6) {
+            left: 14%;
+            width: 175px;
+            height: 175px;
+            bottom: -175px;
+            animation-delay: 30s;
+        }
+        .background li:nth-child(7) {
+            left: 66%;
+            width: 98px;
+            height: 98px;
+            bottom: -98px;
+            animation-delay: 14s;
+        }
+        .background li:nth-child(8) {
+            left: 44%;
+            width: 97px;
+            height: 97px;
+            bottom: -97px;
+            animation-delay: 31s;
+        }
+        .background li:nth-child(9) {
+            left: 40%;
+            width: 43px;
+            height: 43px;
+            bottom: -43px;
+            animation-delay: 1s;
+        }
+        .background li:nth-child(10) {
+            left: 14%;
+            width: 166px;
+            height: 166px;
+            bottom: -166px;
+            animation-delay: 37s;
+        }
+        .background li:nth-child(11) {
+            left: 7%;
+            width: 164px;
+            height: 164px;
+            bottom: -164px;
+            animation-delay: 16s;
+        }
+        .background li:nth-child(12) {
+            left: 27%;
+            width: 146px;
+            height: 146px;
+            bottom: -146px;
+            animation-delay: 57s;
+        }
+        .background li:nth-child(13) {
+            left: 80%;
+            width: 134px;
+            height: 134px;
+            bottom: -134px;
+            animation-delay: 65s;
+        }
+        .background li:nth-child(14) {
+            left: 76%;
+            width: 72px;
+            height: 72px;
+            bottom: -72px;
+            animation-delay: 66s;
+        }
+        .background li:nth-child(15) {
+            left: 78%;
+            width: 111px;
+            height: 111px;
+            bottom: -111px;
+            animation-delay: 17s;
+        }
+        .background li:nth-child(16) {
+            left: 19%;
+            width: 71px;
+            height: 71px;
+            bottom: -71px;
+            animation-delay: 18s;
+        }
+        .background li:nth-child(17) {
+            left: 11%;
+            width: 40px;
+            height: 40px;
+            bottom: -40px;
+            animation-delay: 54s;
+        }
+        .background li:nth-child(18) {
+            left: 60%;
+            width: 178px;
+            height: 178px;
+            bottom: -178px;
+            animation-delay: 6s;
+        }
+        .background li:nth-child(19) {
+            left: 23%;
+            width: 165px;
+            height: 165px;
+            bottom: -165px;
+            animation-delay: 21s;
+        }
+        .background li:nth-child(20) {
+            left: 6%;
+            width: 41px;
+            height: 41px;
+            bottom: -41px;
+            animation-delay: 49s;
+        }
+        .background li:nth-child(21) {
+            left: 78%;
+            width: 84px;
+            height: 84px;
+            bottom: -84px;
+            animation-delay: 67s;
+        }
+        .background li:nth-child(22) {
+            left: 63%;
+            width: 157px;
+            height: 157px;
+            bottom: -157px;
+            animation-delay: 24s;
+        }
+        .background li:nth-child(23) {
+            left: 21%;
+            width: 50px;
+            height: 50px;
+            bottom: -50px;
+            animation-delay: 5s;
+        }
+        .background li:nth-child(24) {
+            left: 69%;
+            width: 110px;
+            height: 110px;
+            bottom: -110px;
+            animation-delay: 102s;
+        }
+        .background li:nth-child(25) {
+            left: 54%;
+            width: 37px;
+            height: 37px;
+            bottom: -37px;
+            animation-delay: 92s;
+        }
+        .background li:nth-child(26) {
+            left: 44%;
+            width: 177px;
+            height: 177px;
+            bottom: -177px;
+            animation-delay: 47s;
+        }
+        .background li:nth-child(27) {
+            left: 35%;
+            width: 40px;
+            height: 40px;
+            bottom: -40px;
+            animation-delay: 24s;
+        }
+        .background li:nth-child(28) {
+            left: 74%;
+            width: 101px;
+            height: 101px;
+            bottom: -101px;
+            animation-delay: 58s;
+        }
+
+        .bg-transparent{
+            border:none !important;
+            color: black!important;
+        }
+        .navbar-brand{
+            font-size: 20px !important;
+            color: white !important;
+        }
+
+        .navbar-nav{
+            text-align: left;
+        }
+        .nav{
+            justify-content: space-between;
+        }
+        .super{
+            justify-content: center !important;
+            padding: 10px;
+            padding-right: 10px;
+        }
+        .active{
+            color: white;
+        }
+        .active:hover{
+            background-color:white;
+            border-radius: 10px;
+        }
+        .fa{
+            font-size: 24px;
+            color:white !important;
+        }
+
+        .row{
+            width: auto;
+        }
+        .col-md-6{
+            padding: 10px;
+            margin: auto;
+        }
+        .card1{
+            text-align: left;
+            padding:3px;
+            height: 35px;
+            font-size: 16px;
+            font-weight: 600;
+            width: 90%;
+            margin-left: 20px;
+           background-color: rgba(33,125,187,1) !important;
+           box-shadow: 1px 0 10px 0 white !important;
+        }
+
+        .card2{
+            text-align: left;
+            padding:3px;
+            height: 35px;
+            font-size: 16px;
+            font-weight: 600;
+            width: 80%;
+            margin-left: 20px;
+           background-color: rgb(255, 115, 0) !important;
+           box-shadow: 1px 0 10px 0 white !important;
+        }
+        .card3{
+            text-align: left;
+            padding:3px;
+            height: 35px;
+            font-size: 16px;
+            font-weight: 600;
+            width: 90%;
+            margin-left: 20px;
+           background-color: rgb(255, 115, 0) !important;
+           box-shadow: 1px 0 10px 0 white !important;
+        }
+        .card4{
+            text-align: left;
+            padding:3px;
+            height: 35px;
+            font-size: 16px;
+            font-weight: 600;
+            width: 80%;
+            margin-left: 20px;
+           background-color: rgba(33,125,187,1) !important;
+           box-shadow: 1px 0 10px 0 white !important;
+        }
+        .dashy{
+            width: auto;
+            padding: 10px;
+        }
+        .item1 { grid-area: header; }
+        .item2 { grid-area: menu; }
+        .item3 { grid-area: main; }
+        .item4 { grid-area: right; }
+        .item5 { grid-area: footer; }
+
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+              'header header header header header header'
+              'menu main main main main main'
+              'menu footer footer footer footer footer';
+            grid-gap: 10px;
+            background-color: transparent;
+          }
+          .grid-container > div {
+            text-align: left;
+            color: white;
+          }
+          
+          .sidenav {
+            height: 30vh;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: black;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 35px;
+          }
+          
+          .sidenav a {
+            font-size: 18px;
+            color: white;
+            padding: 3px;
+            display: inline-flex;
+            transition: 0.1s;
+          }
+          
+          .sidenav a:hover {
+            color: rgba(33,125,187,1);
+          }
+          
+          .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            font-size: 36px;
+          }
+          
+          #main {
+            transition: margin-left 0.5s;
+            padding: 10px;
+          }
+          
+          @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 16px;}
+          }
+          .hoversetting:hover {
+            color: rgba(33,125,187,1) ;
+          }
+          .offerwallchild {
+            display: none;
+          }
+          #offerwallflip:hover {
+            color: rgba(33,125,187,1);
+            background-color: white;
+          }
+          .decenthead{
+            font-weight: 700px;
+            font-size: 20px;
+            margin: 2px;
+          }
+          .decenthead:hover {
+            color: rgba(33,125,187,1);
+            background-color: white;
+          }
+          .decentchild {
+            display: none;
+          }
+          #ptcflip:hover {
+            color: rgba(33,125,187,1);
+            background-color: white;
+          }
+          .ptcchild {
+            display: none;
+          }
+
+          .cryp + .lab {
+              display: block;
+              margin: 0 auto;
+              cursor: pointer;
+              padding: 0.5em;
+              font-size : 16px;
+              font-weight: 600;
+              color:white;
+            }
+
+            .cryp {
+                display: none;
+            }
+
+            .cryp + .lab:before {
+              content: "\2714";
+              border: 0.1em solid white;
+              border-radius: 0.2em;
+              display: inline-block;
+              width: 1em;
+              height: 1em;
+              padding-left: 0.2em;
+              padding-bottom: 0.3em;
+              margin-right: 0.2em;
+              vertical-align: bottom;
+              color: transparent;
+              transition: .2s;
+            }
+
+            .cryp + .lab :active:before {
+              transform: scale(0);
+            }
+
+            .cryp:checked + .lab:before {
+              background-color: red;
+              border-color: red;
+            }
+    </style>
+</head>
+<body>
+<div >
+    <div class="background-fluid" >
+        <ul class="background" id='backgroundIdsafe' >
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+         </ul>
+        <div id='navbarspecialindexId' style="height: 25vh;overflow-y: auto;">
+
+            <div id="mySidenav" class="sidenav">
+                <ul class="nav justify-content-left ml-auto">
+                    <a href="javascript:void(0)" class="closebtn nav-link active" onclick="closeNav()">&times;</a>
+                    <li class="nav-item super">
+                        <a class="nav-link active" onclick='window.location.href="/"'>Home</a>
+                    </li>
+                    <li class="nav-item super">
+                        <a class="nav-link active" onclick='window.location.href="/v1/deploy/public/user/partnerwithus"'>Partner With Us?</a>
+                    </li>
+                    <li class="nav-item super">
+                        <a class="nav-link active" onclick='window.location.href="/v1/deploy/public/user/cryptosweoffer"'>Cryptos we offer</a>
+                    </li>
+                    <li class="nav-item super">
+                        <a class="nav-link active" onclick='window.location.href="/v1/deploy/public/user/howthisworks"'>How this works?</a>
+                    </li>
+                    <li class="nav-item super">
+                        <a class="nav-link active" onclick='window.location.href="/v1/deploy/public/user/aboutus"'>About us</a>
+                    </li>
+                    <li class="nav-item super">
+                        <a class="nav-link active" onclick='window.location.href="/v1/deploy/public/user/contactus"'>Contact us</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="ySidenav" class="sidenav">
+                <ul class="nav justify-content-left ml-auto">
+                    <a href="javascript:void(0)" class="closebtn hoversetting nav-link active"  onclick="returnNav()">&times;</a>
+                    <li class="nav-item super">
+                        <a class="nav-link active" onclick='window.location.href="/"'>Log Out</a>
+                    </li>
+                    <li class="nav-item super">
+                        <a class="nav-link active" onclick='window.location.href="/v1/deploy/secure/user/deletemesafe"'>Delete me</a>
+                    </li>
+                    <li class="nav-item super">
+                        <a class="nav-link active" onclick='window.location.href="/v1/deploy/secure/user/paymesafe"'>Payments-Exchanges : by FaucetPay </a>
+                    </li>
+                    <li class="nav-item super">
+                        <a class="nav-link active" onclick='window.location.href="/v1/deploy/secure/user/valdsafe"'>ValidateAddress : by FaucetPay</a>
+                    </li>
+                    <li class="nav-item super">
+                        <a class="nav-link active" onclick='window.location.href="/v1/deploy/secure/user/paymesafeexpress"'>Payments-Exchanges : by ExpressCrypto </a>
+                    </li>
+                    <li class="nav-item super">
+                        <a class="nav-link active" onclick='window.location.href="/v1/deploy/secure/user/valdsafeexpress"'>Validate user : by ExpressCrypto</a>
+                    </li>
+                    <li class="nav-item super">
+                        <a class="nav-link active" onclick='window.location.href="/v1/deploy/secure/user/changepasswordsafe"'>Change Password</a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div id="main">
+                <div class="grid-container">
+                    <div class="item1">
+                        
+                        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent justify-content-between m-0 p-0">
+                            
+                            <br>
+                            <span style="font-size:20px;cursor:pointer;color: white;" onclick="openNav()"><span class="navbar-brand">
+                            <span style="background-color: rgba(33,125,187,1); border-radius: 10px ; color: white;font-size: 600;padding: 12px;" id='menunavclone' class="nav-link active" >  Menu </span>
+                            </span></span>
+                            <ul class="nav justify-content-end ml-auto">
+                                <li class="nav-item super">
+                                    <span class="nav-link settings" onclick="utilNav()" ><i class="fa fa-cog fa-spin" aria-hidden="true"></i></span>
+                                </li>
+                            </ul>
+                    </nav>
+                    </div>
+                    <script>
+
+                          function utilNav() {
+                            document.getElementById("ySidenav").style.width = "100%";
+                            document.getElementById("mySidenav").style.height = "0";
+                            document.getElementById("main").style.marginRight = "100%";
+                            document.getElementById("navbarspecialindexId").style.height = "15vh";
+                            document.getElementById("ySidenav").style.height = "20vh";
+                            document.getElementById("backgroundIdsafe").style.height = "15%";
+                          }
+                          
+                          function returnNav() {
+                            document.getElementById("ySidenav").style.width = "0";
+                            document.getElementById("main").style.marginRight= "0";
+                            document.getElementById("mySidenav").style.width = "0";
+                            document.getElementById("backgroundIdsafe").style.height = "25%";
+                            document.getElementById("navbarspecialindexId").style.height = "25vh";
+                            document.getElementById("ySidenav").style.height = "0vh";
+                          }
+                    </script>
+                    <div class="item2">Menu</div>
+
+                    <div class="item3" style="width: 100%; height: 100%; overflow: auto;" >
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card card1">
+                                        <span>Last Login Day : <span id='lastloginhashidsecure' > {{data['login']}} </span> </span>
+                                        
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card card2">
+                                        <span>Level : <span id='levlloginhashidsecure' > {{data['level']}} </span> ## Badge : <span id='badgeloginhashidsecure' > {{data['badge']}}  </span></span>
+                                        
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card card3">
+                                        <span>Emeralds : <span id='earningsloginhashidsecure' > {{data['earn']}}  ## </span> <span> Streak :  {{data['streak']}}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card card4">
+                                        <span> <span> Profit :  {{data['profit']}} </span></span>    
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+
+                    <div class="item5"></div>
+                  </div>
+                  </div>
+                  
+                </div>
+                <div>
+                    <div style="background-color:black;padding: 2px;text-align: center;" >
+                    <div style="color: white;font-weight: 700px;font-size: 20px;margin: 2px;"> Hello <span id='userloginhashidsecure' > {{data['name']}} !! Id {{data['mon']}} </span>, Complete the below Tasks!</div>
+            </div>
+            <script>
+                  function openNav() {
+                    document.getElementById("mySidenav").style.width = "100%";
+                    document.getElementById("main").style.marginLeft = "100%";
+                    document.getElementById("navbarspecialindexId").style.height = "15vh";
+                    document.getElementById("mySidenav").style.height = "10vh";
+                    document.getElementById("backgroundIdsafe").style.height = "15%";
+                  }
+                  
+                  function closeNav() {
+                    document.getElementById("mySidenav").style.width = "0";
+                    document.getElementById("main").style.marginLeft= "0";
+                    document.getElementById("backgroundIdsafe").style.height = "25%";
+                    document.getElementById("navbarspecialindexId").style.height = "25vh";
+                    document.getElementById("mySidenav").style.height = "0vh";
+                  }
+            </script>
+    </div>
+    </div>  
+</div>
+
+
+
+<div>
+    <div style="border: 1px solid black;" >
+
+        <div>
+                <div style="background-color:rgba(33,125,187,1);color: white;text-align: center;" >
+                    <div  id="offerwallflip" style="font-weight: 700px;font-size: 20px;margin: 2px;"> OfferWalls</div>
+                </div>
+                <script> 
+                      $("#offerwallflip").click(function(){
+                        $(".offerwallchild").slideToggle("slow");
+                      });
+                </script>
+        </div>
+
+        <div style="height:380px;overflow: auto;" class='offerwallchild'>
+
+                <div style="background-color:black;color: white;text-align: center;">
+
+                    <div  id="cpxmainhead" class="decenthead" style="font-size: 18px;"> CPX Research </div>
+
+                    <div style="height:360px;overflow: auto;width: 50%;margin: 0 auto;padding: 10px;" id='cpx_research_id_div_content' class='decentchild' >
+                        <iframe width="100%" frameBorder="0" height="350px" style="overflow-y: auto;" src="https://offers.cpx-research.com/index.php?app_id=7776&ext_user_id={{data['mon']}}&username={{data['mon']}}&email={{data['placeforemail']}}&subid_1=&subid_2"></iframe>
+                    </div>
+
+                    <script> 
+                      $("#cpxmainhead").click(function(){
+                        $("#cpx_research_id_div_content").slideToggle("slow");
+                      });
+                    </script>
+                </div>  
+
+                <div style="background-color:black;color: white;text-align: center;">
+
+                    <div  id="offertorohead" class="decenthead" style="font-size: 18px;"> OfferToro </div>
+
+                    <div style="height:540px;overflow: auto;width: 70%;margin: 0 auto;padding: 10px;" id='offertoro_div_content' class='decentchild' >
+                        <iframe src="https://www.offertoro.com/ifr/show/28028/{{data['mon']}}/12236" frameborder="0" width="860" height="2400" ></iframe> 
+                    </div>
+
+                    <script> 
+                      $("#offertorohead").click(function(){
+                        $("#offertoro_div_content").slideToggle("slow");
+                      });
+                    </script>
+                </div>
+
+                <div style="background-color:black;color: white;text-align: center;">
+
+                    <div  id="trhead" class="decenthead" style="font-size: 18px;"> Theorem Reach </div>
+
+                    <div style="height:640px;overflow: auto;width: 90%;margin: 0 auto;padding: 10px;" id='tr_div_content' class='decentchild' >
+
+                        <iframe src="https://theoremreach.com/respondent_entry/direct?api_key={{data['trapikey']}}&user_id={{data['mon']}}&transaction_id={{data['trtsstamp']}}" frameborder="0" width="90%" height="500px"  ></iframe>
+                    
+                    </div>
+                    <script> 
+                      $("#trhead").click(function(){
+                        $("#tr_div_content").slideToggle("slow");
+                      });
+                    </script>
+                </div>  
+
+        </div>
+        
+        <div>
+                <div style="background-color:rgba(33,125,187,1);color: white; text-align: center;" >
+                <div id='ptcflip' style="font-weight: 700px;font-size: 20px;margin: 2px;"> Paid To Click Ads</div>
+        </div>
+        <div  class='ptcchild' style="height:200px;overflow: auto;" >
+                <div style="height:220px;overflow: auto;width: 100%;padding: 10px;background-color:rgba(255, 115, 0, 1) ;" id='PtcSectionMainFrame'  >
+                    we will embed <a href="https://onlinejobtem.blogspot.com/2020/05/how-to-use-star-click-html-code-star.html" > star clicks service </a>
+                </div>
+                <script> 
+                      $("#ptcflip").click(function(){
+                        $(".ptcchild").slideToggle("slow");
+                      });
+                </script>
+        </div>    
+    
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div id="autofaucet" style="background-color:black;padding: 20px;text-align: center;overflow: auto;" >
+    <div style="overflow: auto;color: white;font-weight: 700px;font-size: 22px;margin: 20px;">AutoFaucet!</div>
+    <div class="c1" style="overflow: auto;box-shadow:0 0 15px white;background-color:white;width:450px;height:830px;display:inline-block;border-radius:220px 220px 20px 20px;" >
+      <div class="c11" style="border-radius:15px 15px 200px 200px;margin-top: 20px;" ><img style="height:100px;width: 100px;margin: 0 auto;" src="{{url_for('static', filename='favicon.ico')}}">
+         <h5 class="mainhead" style="font-size: 20px" >AutoFaucet</h5>
+         <h8 class="mainhead" style="font-size: 14px;color: rgba(33,125,187,1);" >Surrender your streak to Get a bunch of Cryptos</h8>
+         <p class="mainp">  </p>
+
+         <form style="overflow: auto;" action="/v1/deploy/secure/user/authen/autofausafe" id='autofaucet' method="POST" >
+                    <div style="margin-left: 10px ;align-items: center;" >
+                            <label for="uname" style="font-size: 16px;color: rgba(33,125,187,1);font-weight: 700;margin-bottom: 5px;" class>Username</label><br>
+                            <input style="font-size: 15px;color: white;background-color: black;font-weight: 650;margin: 5px;padding-left: 20px;padding-bottom: 7px;padding-top: 7px;width:70%" type="text" id="unameloginafuniquee" placeholder="username.." name="usernameaf_Login_Safe" onkeyup='username_afSafe_js()'><br>
+                            <label for="pass" style="font-size: 16px;color: rgba(33,125,187,1);font-weight: 700;margin-bottom: 5px;" class>Password</label><br>
+                            <input style="font-size: 15px;color: white;background-color: black;font-weight: 650;margin: 5px;padding-left: 20px;padding-bottom: 7px;padding-top: 7px;width:70%" type="password" id="passwordafuniq" placeholder="Password.." name="passworduniq_safe"><br>
+                            <div id='username_Login_Safe_safpane' style="background-color: red;margin:0 auto;color: white;font-weight: 700;font-size: 14px;width: 70%;"> </div>
+
+                            <label for="bet" style="font-size: 16px;color: rgba(33,125,187,1);font-weight: 700;margin-bottom: 5px;" class>Choose Cryptos</label><br>
+                            
+                            <div style='height:400px;width:150px;overflow:auto;background-color:black;margin:0 auto;padding:15px;border-radius:25px 25px 20px 20px;' >
+                              
+                            <input class='cryp' type='checkbox' id='BTC' name='BTC' value='BTC' > <label class='cryp lab' for='BTC'> BTC </label>
+                             
+                            <input class='cryp' type='checkbox' id='BCH' name='BCH' value='BCH' > <label class='cryp lab' for='BCH'> BCH </label>
+                             
+                            <input class='cryp' type='checkbox' id='BCN' name='BCN' value='BCN' > <label class='cryp lab' for='BCN'> BCN </label>
+                             
+                            <input class='cryp' type='checkbox' id='DASH' name='DASH' value='DASH' > <label class='cryp lab' for='DASH'> DASH </label>
+                             
+                            <input class='cryp' type='checkbox' id='DGB' name='DGB' value='DGB' > <label class='cryp lab' for='DGB'> DGB </label>
+                             
+                            <input class='cryp' type='checkbox' id='DOGE' name='DOGE' value='DOGE' > <label class='cryp lab' for='DOGE'> DOGE </label>
+                             
+                            <input class='cryp' type='checkbox' id='ETH' name='ETH' value='ETH' > <label class='cryp lab' for='ETH'> ETH </label>
+                             
+                            <input class='cryp' type='checkbox' id='EXG' name='EXG' value='EXG' > <label class='cryp lab' for='EXG'> EXG </label>
+                             
+                            <input class='cryp' type='checkbox' id='EXS' name='EXS' value='EXS' > <label class='cryp lab' for='EXS'> EXS </label>
+                             
+                            <input class='cryp' type='checkbox' id='LSK' name='LSK' value='LSK' > <label class='cryp lab' for='LSK'> LSK </label>
+                             
+                            <input class='cryp' type='checkbox' id='LTC' name='LTC' value='LTC' > <label class='cryp lab' for='LTC'> LTC </label>
+                             
+                            <input class='cryp' type='checkbox' id='XMR' name='XMR' value='XMR' > <label class='cryp lab' for='XMR'> XMR </label>
+                             
+                            <input class='cryp' type='checkbox' id='STRAX' name='STRAX' value='STRAX' > <label class='cryp lab' for='STRAX'> STRAX </label>
+                             
+                            <input class='cryp' type='checkbox' id='NEO' name='NEO' value='NEO' > <label class='cryp lab' for='NEO'> NEO </label>
+                             
+                            <input class='cryp' type='checkbox' id='PPC' name='PPC' value='PPC' > <label class='cryp lab' for='PPC'> PPC </label>
+                             
+                            <input class='cryp' type='checkbox' id='XRP' name='XRP' value='XRP' > <label class='cryp lab' for='XRP'> XRP </label>
+                             
+                            <input class='cryp' type='checkbox' id='TRX' name='TRX' value='TRX' > <label class='cryp lab' for='TRX'> TRX </label>
+                             
+                            <input class='cryp' type='checkbox' id='ZEC' name='ZEC' value='ZEC' > <label class='cryp lab' for='ZEC'> ZEC </label>
+                             
+                            <input class='cryp' type='checkbox' id='WAVES' name='WAVES' value='WAVES' > <label class='cryp lab' for='WAVES'> WAVES </label>
+                             
+                            <input class='cryp' type='checkbox' id='ETC' name='ETC' value='ETC' > <label class='cryp lab' for='ETC'> ETC </label>
+                             
+                            <input class='cryp' type='checkbox' id='ADA' name='ADA' value='ADA' > <label class='cryp lab' for='ADA'> ADA </label>
+                             
+                            <input class='cryp' type='checkbox' id='RDD' name='RDD' value='RDD' > <label class='cryp lab' for='RDD'> RDD </label>
+                             
+                            <input class='cryp' type='checkbox' id='XTZ' name='XTZ' value='XTZ' > <label class='cryp lab' for='XTZ'> XTZ </label>
+                             
+                            <input class='cryp' type='checkbox' id='PIVX' name='PIVX' value='PIVX' > <label class='cryp lab' for='PIVX'> PIVX </label>
+                             
+                            <input class='cryp' type='checkbox' id='VTC' name='VTC' value='VTC' > <label class='cryp lab' for='VTC'> VTC </label>
+                             
+                            <input class='cryp' type='checkbox' id='KMD' name='KMD' value='KMD' > <label class='cryp lab' for='KMD'> KMD </label>
+                             
+                            <input class='cryp' type='checkbox' id='ZEN' name='ZEN' value='ZEN' > <label class='cryp lab' for='ZEN'> ZEN </label>
+                             
+                            <input class='cryp' type='checkbox' id='USDT' name='USDT' value='USDT' > <label class='cryp lab' for='USDT'> USDT </label>
+                             
+                            <input class='cryp' type='checkbox' id='RVN' name='RVN' value='RVN' > <label class='cryp lab' for='RVN'> RVN </label>
+                             
+                            <input class='cryp' type='checkbox' id='BNB' name='BNB' value='BNB' > <label class='cryp lab' for='BNB'> BNB </label>
+                             
+                            <input class='cryp' type='checkbox' id='BTT' name='BTT' value='BTT' > <label class='cryp lab' for='BTT'> BTT </label>
+
+                            </div>
+                            <br>
+                            <br>
+                            <div id='betsafehintafid' style="background-color: red;color: white;margin:0 auto;font-weight: 700;font-size: 14px;width: 60%;"> </div>
+                            <div>
+                            <div style="margin:0 auto;padding: 10px;font-weight: 700;font-size: 14px;width: 40%; " class="btn btn-dark btn-md btn-block" onclick='toggler333()' > Reset Payment Gateways </div>
+                            <br>
+                            <div id='pay111'>
+                                <label for="addressEx" style="font-size: 16px;color: rgba(33,125,187,1);font-weight: 700;margin-bottom: 5px;" onclick='toggler333()'>Address by FaucetPay.io </label><br>
+                                <input style="font-size: 15px;color: white;background-color: black;font-weight: 650;margin: 5px;padding-left: 20px;padding-bottom: 7px;padding-top: 7px;width:70%" type="text" id="addressbyfaucet" placeholder="Address..(FaucetPay)" name="addressbyfaucetuni" onkeyup='toggler111()' ><br>
+                            </div>
+                            <br>
+                            <div id='pay222' >
+                                <label for="userID" style="font-size: 16px;color: rgba(33,125,187,1);font-weight: 700;margin-bottom: 5px;" onclick='toggler333()'>UserID by ExpressCrypto </label><br>
+                                <input style="font-size: 15px;color: white;background-color: black;font-weight: 650;margin: 5px;padding-left: 20px;padding-bottom: 7px;padding-top: 7px;width:70%" type="text" id="useridbyexpress" placeholder="UserID..(ExpressCrypto)" name="useridbyexpressuni" onkeyup='toggler222()'><br>
+                            </div>
+                            <br>
+                        </div>
+                        <script type="text/javascript">
+                            function toggler111() {
+                                document.getElementById("pay222").style.display = "none";
+                                document.getElementById("pay111").style.display = "block";
+                            }
+                            function toggler333() {
+                                document.getElementById("pay222").style.display = "block";
+                                document.getElementById("pay111").style.display = "block";
+                            }
+                            function toggler222() {
+                                document.getElementById("pay222").style.display = "block";
+                                document.getElementById("pay111").style.display = "none";
+                            }
+                        </script>
+                    </div>
+                    <button type="submit" id='logsafebuttonafsafee' style="margin:0 auto;padding: 10px;font-weight: 700;font-size: 16px;width: 50%; " class="btn btn-dark btn-md btn-block">Hit for AutoFaucet</button>
+                    <script type="text/javascript">
+                            function username_afSafe_js(){
+                                var username_Login_Safe_text = '';
+                                username_Login_Safe_text = document.getElementById("unameloginafuniquee").value;
+                                if(username_Login_Safe_text.length == 0){
+                                    document.getElementById("username_Login_Safe_safpane").innerHTML = ' ';
+                                    document.getElementById("logsafebuttonafsafee").style.display = "none";
+                                }
+                                else if(username_Login_Safe_text.length < 8){
+                                    document.getElementById("username_Login_Safe_safpane").innerHTML = "Length should be greater than 8!";
+                                    document.getElementById("logsafebuttonafsafee").style.display = "none";
+                                }
+                                else if(username_Login_Safe_text.length > 8){
+                                    document.getElementById("username_Login_Safe_safpane").innerHTML = ' ';
+                                    document.getElementById("logsafebuttonafsafee").style.display = "block";
+                                }
+                            }
+                        </script>
+                    <br>
+                </form>
+      </div>
+   </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="readytouse" style="background-color:rgba(33,125,187,0.9);padding: 20px;text-align: center;overflow: auto;" >
+    <div style="overflow: auto;color: white;font-weight: 700px;font-size: 22px;margin: 20px;">Place Autofaucet bet!!</div>
+    <div class="c1" style="overflow: auto;box-shadow:0 0 15px black;background-color:white;width:450px;height:530px;display:inline-block;border-radius:15px 15px 200px 200px;" >
+      <div class="c11" style="border-radius:15px 15px 200px 200px;" ><img style="height:100px;width: 100px;margin: 0 auto;" src="{{url_for('static', filename='favicon.ico')}}">
+         <h5 class="mainhead" style="font-size: 20px" >fauceMe</h5>
+         <h8 class="mainhead" style="font-size: 14px;" >for each Bet, We will return Reward with +25% or -25%</h8>
+         <p class="mainp">  </p>
+
+
+         <form style="overflow: auto;" action="/v1/deploy/secure/user/authen/betsafe" id='betsafe' method="POST" >
+                    <div style="margin-left: 10px ;align-items: center;" >
+                            <label for="uname" style="font-size: 16px;color: rgba(33,125,187,1);font-weight: 700;margin-bottom: 5px;" class>Username</label><br>
+                            <input style="font-size: 15px;color: white;background-color: black;font-weight: 650;margin: 5px;padding-left: 20px;padding-bottom: 7px;padding-top: 7px;width:70%" type="text" id="unameloginuniquee" placeholder="username.." name="username_Login_Safe" onkeyup='username_Safe_js()'><br>
+                            <label for="pass" style="font-size: 16px;color: rgba(33,125,187,1);font-weight: 700;margin-bottom: 5px;" class>Password</label><br>
+                            <input style="font-size: 15px;color: white;background-color: black;font-weight: 650;margin: 5px;padding-left: 20px;padding-bottom: 7px;padding-top: 7px;width:70%" type="password" id="passworduniq" placeholder="Password.." name="passworduniq_safe"><br>
+                            <div id='username_Login_Safe_spane' style="background-color: red;margin:0 auto;color: white;font-weight: 700;font-size: 14px;width: 70%;"> </div>
+
+                            <label for="bet" style="font-size: 16px;color: rgba(33,125,187,1);font-weight: 700;margin-bottom: 5px;" class>Bet Emeralds</label><br>
+                            <input style="font-size: 15px;color: white;background-color: black;font-weight: 650;margin: 5px;padding-left: 20px;padding-bottom: 7px;padding-top: 7px;width:70%" type="text" id="betplacedid" placeholder="Bet (Minimum 10 emeralds)" name="bet_Safe" onkeyup='bet_safe_js()'><br>
+                            <div id='betsafehintid' style="background-color: red;color: white;margin:0 auto;font-weight: 700;font-size: 14px;width: 60%;"> </div>
+                        <br>
+                    </div>
+                    <button type="submit" id='logsafebuttonsafee' style="margin:0 auto;padding: 10px;font-weight: 700;font-size: 16px;width: 50%; " class="btn btn-dark btn-md btn-block">Place My bet</button>
+                    <script type="text/javascript">
+                            function username_Safe_js(){
+                                var username_Login_Safe_text = '';
+                                username_Login_Safe_text = document.getElementById("unameloginuniquee").value;
+                                if(username_Login_Safe_text.length == 0){
+                                    document.getElementById("username_Login_Safe_spane").innerHTML = ' ';
+                                    document.getElementById("logsafebuttonsafee").style.display = "none";
+                                }
+                                else if(username_Login_Safe_text.length < 8){
+                                    document.getElementById("username_Login_Safe_spane").innerHTML = "Length should be greater than 8!";
+                                    document.getElementById("logsafebuttonsafee").style.display = "none";
+                                }
+                                else if(username_Login_Safe_text.length > 8){
+                                    document.getElementById("username_Login_Safe_spane").innerHTML = ' ';
+                                    document.getElementById("logsafebuttonsafee").style.display = "block";
+                                }
+                            }
+                            function bet_safe_js(){
+                                var username_Login_Safe_bet = '';
+                                username_Login_Safe_bet = document.getElementById("betplacedid").value;
+                                if(username_Login_Safe_bet == 0){
+                                    document.getElementById("betsafehintid").innerHTML = ' ';
+                                    document.getElementById("logsafebuttonsafee").style.display = "none";
+                                }
+                                else if(username_Login_Safe_bet < 10){
+                                    document.getElementById("betsafehintid").innerHTML = "Bet with Minimum 10 Emeralds!";
+                                    document.getElementById("logsafebuttonsafee").style.display = "none";
+                                }
+                                else if(username_Login_Safe_bet > 9){
+                                    document.getElementById("betsafehintid").innerHTML = ' ';
+                                    document.getElementById("logsafebuttonsafee").style.display = "block";
+                                }
+                            }
+                        </script>
+                    <br>
+                </form>
+
+
+
+      </div>
+   </div>
+</div>
+
+
+    <div id="readytouse" style="background-color:rgba(33,125,187,1);padding: 20px;text-align: center;" >
+        <div style="color: white;font-weight: 700px;font-size: 30px;margin: 20px;">Ready to use the best faucet ever?</div>
+        <div style="color: white;font-weight: 600px;font-size: 20px;margin: 20px;"> Register - Login - Target - Earn - Withdraw - Repeat </div>
+    </div>
+        <div id="footer" style="background-color:black;height: 500px;overflow: auto;" >
+            <h2 style="color: white;font-weight: 700;font-size: 20px;text-align: center;padding-top: 15px ;">Useful Links</h2>
+            <div style="margin-top:30px;" ></div>
+            <div style="display:block;text-align: center;overflow-x:auto;overflow-y: auto;">
+                <ul id="menufooter" class="shadow" style="text-align: left;display: inline-block;list-style-type: none ;color:white;width:300px" >
+                    <li>
+                        <a onclick='window.location.href="/"' onmouseout="this.style.color='white';this.style.backgroundColor='black'" style="color: white;font-weight: 700;font-size:18px;padding:2px;margin:20px"   onmouseover="this.style.color='rgba(33,125,187,1)';this.style.backgroundColor='white'" >Home</a>
+                    </li>
+                    <li>
+                        <a onclick='window.location.href="/v1/deploy/public/user/partnerwithus"' onmouseout="this.style.color='white';this.style.backgroundColor='black'" style="color: white;font-weight: 700;font-size:18px;padding:2px;margin:20px"   onmouseover="this.style.color='rgba(33,125,187,1)';this.style.backgroundColor='white'" >Partner with us</a>
+                    </li>
+                    <li>
+                        <a onclick='window.location.href="/v1/deploy/public/user/cryptosweoffer"' onmouseout="this.style.color='white';this.style.backgroundColor='black'" style="color: white;font-weight: 700;font-size:18px;padding:2px;margin:20px"   onmouseover="this.style.color='rgba(33,125,187,1)';this.style.backgroundColor='white'" >Cryptos we offer</a>
+                    </li>
+                    <li>
+                        <a onclick='window.location.href="/v1/deploy/public/user/howthisworks"' onmouseout="this.style.color='white';this.style.backgroundColor='black'" style="color: white;font-weight: 700;font-size:18px;padding:2px;margin:20px"   onmouseover="this.style.color='rgba(33,125,187,1)';this.style.backgroundColor='white'" >How this works?</a>
+                    </li>
+                    <li>
+                        <a onclick='window.location.href="/v1/deploy/public/user/aboutus"' onmouseout="this.style.color='white';this.style.backgroundColor='black'" style="color: white;font-weight: 700;font-size:18px;padding:2px;margin:20px"   onmouseover="this.style.color='rgba(33,125,187,1)';this.style.backgroundColor='white'" >About us</a>
+                    </li>
+                    <li>
+                        <a onclick='window.location.href="/v1/deploy/public/user/contactus"' onmouseout="this.style.color='white';this.style.backgroundColor='black'" style="color: white;font-weight: 700;font-size:18px;padding:2px;margin:20px"   onmouseover="this.style.color='rgba(33,125,187,1)';this.style.backgroundColor='white'" >Contact us</a>
+                    </li>
+                </ul>
+
+                <ul id="stylermenu" class="shadow" style="text-align: left;display: inline-block;list-style-type: none ;color:white;width:300px" >
+                    <li>
+                        <a  onclick='window.location.href="/"' onmouseout="this.style.color='white';this.style.backgroundColor='black'" style="color: white;font-weight: 700;font-size:18px;padding:2px;margin:20px"   onmouseover="this.style.color='rgba(33,125,187,1)';this.style.backgroundColor='white'" >Log In</a>
+                    </li>
+                    <li>
+                        <a onclick='window.location.href="/"' onmouseout="this.style.color='white';this.style.backgroundColor='black'" style="color: white;font-weight: 700;font-size:18px;padding:2px;margin:20px"   onmouseover="this.style.color='rgba(33,125,187,1)';this.style.backgroundColor='white'" >Sign Up</a>
+                    </li>
+                    <li>
+                        <a onmouseout="this.style.color='white';this.style.backgroundColor='black'" style="color: white;font-weight: 700;font-size:18px;padding:2px;margin:20px"   onmouseover="this.style.color='rgba(33,125,187,1)';this.style.backgroundColor='white'" ></a>
+                    </li>
+                    <li>
+                        <a onclick='window.location.href="/"' onmouseout="this.style.color='white';this.style.backgroundColor='black'" style="color: white;font-weight: 700;font-size:18px;padding:2px;margin:20px"   onmouseover="this.style.color='rgba(33,125,187,1)';this.style.backgroundColor='white'" >why us?</a>
+                    </li>
+                </ul>
+            </div>
+            <div style="font-size:16px;margin-top: 40px;padding-bottom: 40px;font-weight:700;color:white;text-align: center;padding-left: 25px;padding-right:25px;" > This property belongs to Emcs Faucet Network <br> All the copyrights are entitled to Emcs Faucet Network. <br> Please do not copy paste the content as it may lead to unavoidable consequences! <br>
+            </div>
+            <div style="font-size:16px;margin-top: 40px;padding-bottom: 40px;font-weight:700;color:white;text-align: center;padding-left: 25px;padding-right:25px;" > For a continous 5 daily streaked log in, you will earn 50 Emeralds. Log in to know more
+            </div>
+        </div>
+    </body>
+</html>
